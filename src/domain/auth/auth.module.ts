@@ -18,6 +18,9 @@ const GLOBAL_GUARD = { provide: APP_GUARD, useClass: JwtAuthGuard };
     providers: [
         JwtProvider,
         GLOBAL_GUARD
+    ],
+    exports: [
+        JwtProvider,
     ]
 })
 export class AuthModule {
