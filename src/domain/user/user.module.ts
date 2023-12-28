@@ -7,7 +7,9 @@ const USER_REPOSITORY = TypeOrmModule.forFeature([UserEntity]);
 @Global()
 @Module({
     imports: [USER_REPOSITORY],
-    exports: [USER_REPOSITORY]
+    exports: [USER_REPOSITORY],
+    providers: [],
+    controllers: []
 })
 export class UserModule {
 }
