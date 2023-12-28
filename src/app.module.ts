@@ -5,6 +5,7 @@ import { UserModule } from './domain/user/user.module';
 import { CourseModule } from './domain/course/course.module';
 import { ConfigModule } from '@nestjs/config';
 import { LectureModule } from './domain/lecture/lecture.module';
+import { ClassRegistrationModule } from './domain/classRegistration/classRegistration.module';
 
 @Module({
     imports: [
@@ -13,6 +14,7 @@ import { LectureModule } from './domain/lecture/lecture.module';
         UserModule,
         LectureModule,
         CourseModule,
+        ClassRegistrationModule,
         ConfigModule.forRoot({ isGlobal: true })
     ]
 })
