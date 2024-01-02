@@ -4,6 +4,8 @@ import { ConfigService } from '@nestjs/config';
 import { APP_GUARD } from '@nestjs/core';
 import { JwtAuthGuard } from '../../global/guard/jwt.guard';
 import { JwtProvider } from '../../global/security/jwt/jwt.provider';
+import { LoginUseCase } from './usecase/login.usecase';
+import { AuthController } from './presentation/auth.controller';
 
 const GLOBAL_GUARD = { provide: APP_GUARD, useClass: JwtAuthGuard };
 
@@ -17,10 +19,11 @@ const GLOBAL_GUARD = { provide: APP_GUARD, useClass: JwtAuthGuard };
     })],
     providers: [
         JwtProvider,
-        GLOBAL_GUARD
+        GLOBAL_GUARD,
+        LoginUseCase
     ],
-    exports: [
-        JwtProvider,
+    controllers: [
+        AuthController
     ]
 })
 export class AuthModule {
